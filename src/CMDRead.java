@@ -70,7 +70,19 @@ public class CMDRead
             else if(args[i].equals("-s"))   //'-s'递归处理子文件夹
                 functions[4] = true;
             else if(args[i].equals("-a"))   //'-a'代码行/空行/注释行
+            {
                 functions[5] = true;
+                if(i + 1 == args.length)
+                {
+                    inputError = true;
+                    break;
+                }
+                if(args[i + 1].charAt(0) != '-')
+                {
+                    i++;
+                    sourceName = args[i];
+                }
+            }
             else if(args[i].equals("-e"))   //停用词表
             {
                 functions[6] = true;

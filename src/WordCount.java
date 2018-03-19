@@ -42,23 +42,11 @@ public class WordCount  //统计字符类
 
         while( (line = stopInput.readLine()) != null)   //获取所有停用词
         {
-            String currentWord = "";    //当前识别的单词
-            int pHead = 0;  //识别的单词首字母所在下标
-            for(int i = 0; i < line.length(); i++)
+            String[] currentWord = line.split(" ");
+            for(int i = 0; i < currentWord.length; i++)
             {
-                if (line.charAt(i) != 32)
-                {
-                    //识别单词开头
-                    if(i == 0)  //字符在行首为词首
-                        pHead = 0;
-                    else if(line.charAt(i - 1) == 32)   //字符前有分隔符为词首
-                        pHead = i;
-                    //识别单词结尾
-                    if(i == line.length() - 1)  //字符在行末为词尾
-                        stopWord.add(line.substring(pHead));
-                    else if(line.charAt(i + 1) == 32)   //字符后有分隔符为词尾
-                        stopWord.add(line.substring(pHead, i + 1));
-                }
+                if(currentWord[i] != null && currentWord[i].length() > 0) //去掉空字符串
+                    stopWord.add(currentWord[i]);
             }
         }
 
@@ -71,58 +59,68 @@ public class WordCount  //统计字符类
         int charNum = 0;    //字符数
         int wordNum = 0;    //单词数
         int lineNum = 0;    //总行数
+        int codeLineNum = 0; //代码行
+        int emptyLineNum = 0;   //空行
+        int noteLineNum = 0;    //注释行
+        boolean isNode = false; //下行是否为/* 与 */之间的注释行
         while( (line = this.input.readLine()) != null)
         {
             if(functions[0])    //统计字符数
                 charNum += line.length();
             if(functions[1])    //统计单词数
             {
-                String currentWord = "";    //当前识别的单词
-                int pHead = 0;  //识别的单词首字母所在下标
-                for(int i = 0; i < line.length(); i++)
+                String[] currentWord = line.split(",| |\t", -1);    //当前行识别的单词
+                for(int i = 0; i < currentWord.length; i++)
                 {
-                    char currentChar = line.charAt(i);  //获取当前单个字符
-                    if (currentChar != 32 && currentChar != ',' && currentChar != '\t') //当前字符不是逗号、空格、'\t'时
+                    if(currentWord[i] != null && currentWord[i].length() > 0) //去掉空字符串
                     {
-                        if(i == 0)  //若在行首，则记一个单词开始
-                        {
-                            pHead = 0;
-                            wordNum += 1;
-                        }
-                        else
-                        {
-                            char previousChar = line.charAt(i - 1); //前一字符
-                            if(previousChar == 32 || previousChar == ',' || previousChar == '\t')   //若前面有逗号、空格、'\t'隔开，则也记一个单词开始
-                            {
-                                pHead = i;
-                                wordNum += 1;
-                            }
-                        }
-
                         if(functions[6])    //停用词
                         {
-                            if (i == line.length() - 1)  //若在行末，则记单词的结束
-                            {
-                                currentWord = line.substring(pHead);
-                                if(stopWord.indexOf(currentWord) != -1) //识别单词在停用词列表中
-                                    wordNum -= 1;
-                            }
-                            else
-                            {
-                                char behindChar = line.charAt(i + 1);   //后一字符
-                                if (behindChar == 32 || behindChar == ',' || behindChar == '\t') //若后面有逗号、空格、'\t'隔开，则也记一个单词开始
-                                {
-                                    currentWord = line.substring(pHead, i + 1);
-                                    if(stopWord.indexOf(currentWord) != -1) //识别单词在停用词列表中
-                                        wordNum -= 1;
-                                }
-                            }
+                            if(stopWord.indexOf(currentWord[i]) == -1)
+                                wordNum += 1;
                         }
+                        else
+                            wordNum += 1;
                     }
                 }
             }
             if(functions[2])    //统计总行数
                 lineNum += 1;
+            if(functions[5])    //统计代码行、空行、注释行
+            {
+                String line = this.line.replaceAll(" ","").replace("\t","");  //去除空格和\t
+                int[] noteIndex = new int[5];  //"/*"、"//"、"*/"所在下标
+                noteIndex[0] = line.indexOf("/*");
+                noteIndex[1] = line.indexOf("//");
+                noteIndex[2] = line.indexOf("*/");
+                noteIndex[3] = line.lastIndexOf("/*");
+                noteIndex[4] = line.lastIndexOf("*/");
+                if(noteIndex[0] == 0 || noteIndex[0] == 1)  //"/*"注释在行首
+                {
+                    if(noteIndex[2] == line.length() - 2)   // "/*...*/"占整行
+                        noteLineNum += 1;
+                    else if(noteIndex[2] == -1) //该行"/*"未结束
+                    {
+                        noteLineNum += 1;
+                        isNode = true;
+                    }
+                }
+                else if(noteIndex[1] == 0 || noteIndex[1] == 1)   //"//"在行首
+                    noteLineNum += 1;
+                else if(noteIndex[2] == line.length() - 2 && isNode) //"*/"注释在行尾且上一行"/*"未结束
+                {
+                    noteLineNum += 1;
+                    isNode = false;
+                }
+                else if(line == null || line.length() <= 1)    //空行
+                    emptyLineNum += 1;
+                else
+                {
+                    codeLineNum += 1;
+                    if(isNode && noteIndex[2] != -1)
+                        isNode = false;
+                }
+            }
         }
 
         if(functions[0])    //输出字符数
@@ -131,5 +129,7 @@ public class WordCount  //统计字符类
             output.write(sourceFile.getName() + ", 单词数：" + wordNum + "\r\n");
         if(functions[2])    //输出总行数
             output.write(sourceFile.getName() + ", 总行数：" + lineNum + "\r\n");
+        if(functions[5])    //输出代码行、空行、注释行
+            output.write(sourceFile.getName() + ", 代码行/空行/注释行：" + codeLineNum + "/" + emptyLineNum + "/" + noteLineNum + "\r\n");
     }
 }
