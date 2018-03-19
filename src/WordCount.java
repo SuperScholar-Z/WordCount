@@ -10,17 +10,19 @@ public class WordCount  //统计字符类
     private String line = "";    //一行数据
     private ArrayList<String>stopWord = new ArrayList<String>();    //停用词
 
-    public WordCount(String sourceName, String writeName) throws IOException
+    public WordCount(String writeName) throws IOException    //初始化输出文件
     {
-        this.sourceFile = new File(sourceName);
-        this.input = new BufferedReader(new InputStreamReader(new FileInputStream(this.sourceFile)));
-
         this.writeFile = new File(writeName);
         if(!this.writeFile.exists())
         {
             this.writeFile.createNewFile(); // 创建新文件
         }
         output = new BufferedWriter(new FileWriter(this.writeFile));
+    }
+    public void setSourceFile(String sourceName) throws IOException //设置输入文件名
+    {
+        this.sourceFile = new File(sourceName);
+        this.input = new BufferedReader(new InputStreamReader(new FileInputStream(this.sourceFile)));
     }
 
     public void Close() throws IOException    //关闭文件
@@ -56,7 +58,7 @@ public class WordCount  //统计字符类
 
     public void Count(boolean[] functions) throws IOException  //统计
     {
-        int charNum = 0;    //字符数
+        int charNum = -1;   //字符数
         int wordNum = 0;    //单词数
         int lineNum = 0;    //总行数
         int codeLineNum = 0; //代码行
@@ -66,7 +68,7 @@ public class WordCount  //统计字符类
         while( (line = this.input.readLine()) != null)
         {
             if(functions[0])    //统计字符数
-                charNum += line.length();
+                charNum += line.length() + 1;
             if(functions[1])    //统计单词数
             {
                 String[] currentWord = line.split(",| |\t", -1);    //当前行识别的单词
@@ -122,6 +124,8 @@ public class WordCount  //统计字符类
                 }
             }
         }
+        if(charNum < 0)
+            charNum = 0;
 
         if(functions[0])    //输出字符数
             output.write(sourceFile.getName() + ", 字符数：" + charNum + "\r\n");
