@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15ea1480-4ead-43d7-96c0-380dc3a72519" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/WordCount.exe" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/error.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/result.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/test.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result1-2.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result2-1.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/result2-2.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/stopList.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test.c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test2.c" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExeExchangeSetting.exe4j" afterPath="$PROJECT_DIR$/ExeExchangeSetting.exe4j" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/result.txt" afterPath="$PROJECT_DIR$/result.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMDRead.java" afterPath="$PROJECT_DIR$/src/CMDRead.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WordCount.java" afterPath="$PROJECT_DIR$/src/WordCount.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WordCount.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -614,12 +599,12 @@
       <workItem from="1521437454499" duration="408000" />
       <workItem from="1521437907456" duration="443000" />
       <workItem from="1521446118758" duration="4719000" />
-      <workItem from="1521451427005" duration="10843000" />
+      <workItem from="1521451427005" duration="11317000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53139000" />
+    <option name="totallyTimeSpent" value="53613000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
