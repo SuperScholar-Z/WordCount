@@ -106,14 +106,18 @@ public class WordCount  //统计字符类
                         noteLineNum += 1;
                         isNode = true;
                     }
+                    else
+                        codeLineNum += 1;
                 }
                 else if(noteIndex[1] == 0 || noteIndex[1] == 1)   //"//"在行首
                     noteLineNum += 1;
-                else if(noteIndex[2] == line.length() - 2 && isNode) //"*/"注释在行尾且上一行"/*"未结束
+                else if(noteIndex[2] != -1 && noteIndex[2] == line.length() - 2 && isNode) //"*/"注释在行尾且上一行"/*"未结束
                 {
                     noteLineNum += 1;
                     isNode = false;
                 }
+                else if(isNode && noteIndex[2] == -1) //"/*"为未结束
+                    noteLineNum += 1;
                 else if(line == null || line.length() <= 1)    //空行
                     emptyLineNum += 1;
                 else

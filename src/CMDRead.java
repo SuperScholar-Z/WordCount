@@ -33,7 +33,7 @@ public class CMDRead
             {
                 if (f.isDirectory() && function_s) //判断是文件夹
                     getAllFile(sourceNameArray, source, f.getPath(), keyword, true);
-                else if (f.getName().indexOf(keyword) == f.getName().length() - 2)
+                else if (f.getName().indexOf(keyword) == f.getName().length() - keyword.length())
                     sourceNameArray.add(f.getPath());
             }
         }
@@ -159,7 +159,7 @@ public class CMDRead
             int indexOfStar = source.indexOf("*.");
             String rootPath = "./";   //根目录
             String keyword = "";    //匹配关键字
-            if (indexOfStar == source.length() - 3) //有"*.c"时搜寻所有文件
+            if (indexOfStar != -1) //有"*.c"时搜寻所有文件
             {
                 if (indexOfStar > 0)
                     rootPath = source.substring(0, indexOfStar);
@@ -181,14 +181,20 @@ public class CMDRead
 
         if(inputError || sourceNameArray == null || sourceNameArray.size() == 0)
         {
-            System.out.println("输入格式有误！");
+            if(sourceNameArray.size() == 0)
+                System.out.println("找不到指定的文件！");
+            else
+                System.out.println("输入格式有误！");
             File errorFile = new File("error.txt");
             if(errorFile.exists())
             {
                 errorFile.createNewFile(); // 创建新文件
             }
             BufferedWriter output = new BufferedWriter(new FileWriter(errorFile));
-            output.write("输入格式有误！");
+            if(sourceNameArray.size() == 0)
+                output.write("找不到指定的文件！");
+            else
+                output.write("输入格式有误！");
             output.flush();
             output.close();
         }
