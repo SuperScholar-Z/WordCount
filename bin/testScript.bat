@@ -17,6 +17,6 @@ wc.exe -c -w -l -a *.c -o result14.txt
 wc.exe -c -w -l -a -s *.c -o result15.txt
 wc.exe -c -w -l -a test\*.cpp -o result16.txt
 wc.exe -c -w -l -a test.c -o
-wc.exe -c -w -l -a test.c -e
-wc.exe -c -w -l -a -o result17.txt
-wc.exe -c -w -l test.c -o result18.txt -a
+wc.exe -c -w -l -a test.c -o result17.txt -e
+wc.exe -c -w -l -a -o result18.txt
+wc.exe -c -w -l test.c -o result19.txt -a

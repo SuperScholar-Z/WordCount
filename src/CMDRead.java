@@ -185,8 +185,14 @@ public class CMDRead
                 System.out.println("找不到指定的文件！");
             else
                 System.out.println("输入格式有误！");
-            File errorFile = new File("error.txt");
-            if(errorFile.exists())
+            String rootWrite = "./";
+            if(writeName.contains("\\"))
+            {
+                rootWrite = writeName.substring(0, writeName.lastIndexOf("\\") + 1);
+                writeName = writeName.substring(writeName.lastIndexOf("\\") + 1);
+            }
+            File errorFile = new File(rootWrite + "error_" + writeName);
+            if(!errorFile.exists())
             {
                 errorFile.createNewFile(); // 创建新文件
             }

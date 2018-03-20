@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15ea1480-4ead-43d7-96c0-380dc3a72519" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/stoplist.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/testScript.bat" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/wc.exe" afterPath="$PROJECT_DIR$/bin/wc.exe" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/WordCount_jar/WordCount.jar" afterPath="$PROJECT_DIR$/out/artifacts/WordCount_jar/WordCount.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/WordCount/CMDRead.class" afterPath="$PROJECT_DIR$/out/production/WordCount/CMDRead.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/WordCount/WordCount.class" afterPath="$PROJECT_DIR$/out/production/WordCount/WordCount.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/result1.txt" afterPath="$PROJECT_DIR$/bin/result1.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/result2.txt" afterPath="$PROJECT_DIR$/bin/result2.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/result3.txt" afterPath="$PROJECT_DIR$/bin/result3.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/result4.txt" afterPath="$PROJECT_DIR$/bin/result4.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/result5.txt" afterPath="$PROJECT_DIR$/bin/result5.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/result6.txt" afterPath="$PROJECT_DIR$/bin/result6.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/test1.c" afterPath="$PROJECT_DIR$/bin/test1.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/test2.c" afterPath="$PROJECT_DIR$/bin/test2.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/test3.c" afterPath="$PROJECT_DIR$/bin/test3.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/test4.c" afterPath="$PROJECT_DIR$/bin/test4.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CMDRead.java" afterPath="$PROJECT_DIR$/src/CMDRead.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WordCount.java" afterPath="$PROJECT_DIR$/src/WordCount.java" />
     </list>
     <ignored path="WordCount.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,11 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CMDRead.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CMDRead.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CMDRead.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
-              <caret line="158" column="47" selection-start-line="158" selection-start-column="47" selection-end-line="158" selection-end-column="47" />
+            <state relative-caret-position="240">
+              <caret line="199" column="43" selection-start-line="199" selection-start-column="43" selection-end-line="199" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WordCount.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WordCount.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WordCount.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="133" column="35" selection-start-line="133" selection-start-column="35" selection-end-line="133" selection-end-column="35" />
+            <state relative-caret-position="38">
+              <caret line="8" column="26" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,8 +71,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/CMDRead.java" />
         <option value="$PROJECT_DIR$/src/WordCount.java" />
+        <option value="$PROJECT_DIR$/src/CMDRead.java" />
       </list>
     </option>
   </component>
@@ -127,8 +113,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -149,7 +133,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -580,7 +566,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="CMDRead" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="-c -w -l -a -s bin\#.c -e bin\stoplist.txt" />
+      <option name="PROGRAM_PARAMETERS" value="-c -w -l -o output.txt" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -619,11 +605,12 @@
       <workItem from="1521474491819" duration="2580000" />
       <workItem from="1521520453504" duration="8302000" />
       <workItem from="1521545484926" duration="135000" />
+      <workItem from="1521554345353" duration="982000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64676000" />
+    <option name="totallyTimeSpent" value="65658000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -636,8 +623,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3270142" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328594" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -669,7 +656,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="109" />
+      <option name="time" value="114" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -678,6 +665,26 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/CMDRead.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3002">
+          <caret line="158" column="47" selection-start-line="158" selection-start-column="47" selection-end-line="158" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WordCount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CMDRead.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -954,20 +961,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/result.txt" />
-    <entry file="file://$PROJECT_DIR$/src/CMDRead.java">
+    <entry file="file://$PROJECT_DIR$/src/WordCount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="158" column="47" selection-start-line="158" selection-start-column="47" selection-end-line="158" selection-end-column="47" />
+        <state relative-caret-position="38">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WordCount.java">
+    <entry file="file://$PROJECT_DIR$/src/CMDRead.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="133" column="35" selection-start-line="133" selection-start-column="35" selection-end-line="133" selection-end-column="35" />
+        <state relative-caret-position="240">
+          <caret line="199" column="43" selection-start-line="199" selection-start-column="43" selection-end-line="199" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
